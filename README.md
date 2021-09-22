@@ -2,4 +2,3 @@
 
 ## 주제: Laboratory Safety Education System
 ## 팀원:
-<hr>

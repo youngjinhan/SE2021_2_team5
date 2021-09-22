@@ -1,4 +1,4 @@
-# SE2021_2_team5<br/><br/>
+# SE2021_2_team5<br/><br/><br/>
 ## 주제: Laboratory Safety Education System<br/><br/><br/><br/>
 #### 사용 환경 및 툴: VRChat SDK3, Unity 2019.4.30f1
 

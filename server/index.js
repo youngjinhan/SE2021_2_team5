@@ -10,10 +10,16 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
+app.set("view engine", "ejs");
+
 app.use("/api", studentRoutes.routes);
 
 app.get("/", (req, res) => {
-  res.json({ success: true });
+  res.render("index", {});
+});
+
+app.get("/myPage", (req, res) => {
+  res.render("myPage", {});
 });
 
 app.listen(port, () => {

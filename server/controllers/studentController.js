@@ -17,7 +17,7 @@ const addStudent = async (req, res, next) => {
 
 const getAllStudents = async (req, res, next) => {
   try {
-    const students = await db.ref("students");
+    const students = db.ref("students");
     const data = await students.get();
     const studentsArray = [];
     if (!data.exists()) {
@@ -29,7 +29,11 @@ const getAllStudents = async (req, res, next) => {
           stu.val().id,
           stu.val().firstName,
           stu.val().lastName,
-          stu.val().major
+          stu.val().major,
+          stu.val().lectCheck,
+          stu.val().chemCheck,
+          stu.val().electCheck,
+          stu.val().isDone
         );
         studentsArray.push(student);
       });

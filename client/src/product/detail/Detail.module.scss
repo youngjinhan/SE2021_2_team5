@@ -1,0 +1,103 @@
+.root{
+  width: 100%;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rowContainer{
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+}
+
+.marginBottom10{
+  margin-bottom: 10px;
+}
+
+.marginLeft10{
+  margin-left: 10px;
+}
+
+.infoBox{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flex1{
+  width: calc(60% - 5px);
+  height: 100%;
+}
+
+.sellorBox{
+  flex:2;
+}
+
+.buyBox{
+  flex:1;
+}
+
+.price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.loading {
+  display: flex;
+  flex: 1;
+  margin-top: 240px;
+  align-items: center; 
+  justify-Content: center;
+}
+
+.title{
+
+}
+
+.body{
+
+}
+
+.productImg{
+  height: 500px;
+}
+
+.detail{
+  min-height: 300px;;
+}
+
+.title{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+// .empty {
+//   text-align: center;
+// }
+
+// .img {
+//   height: 200px;
+// }
+
+// .title {
+//   font-size: 2em;
+//   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+
+//   color: rgba(0, 0, 0, 0.87);
+// }
+
+// .price {
+//   font-weight: 100;
+// }
+
+// .detail {
+//   margin-top: 12px;
+//   margin-bottom: 12px;
+// }

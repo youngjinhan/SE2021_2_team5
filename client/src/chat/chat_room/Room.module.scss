@@ -1,0 +1,75 @@
+.margintop1{
+  margin-top: 1px;
+}
+
+.marginleft5{
+    margin-left: 10px;
+}
+
+.test{
+    width: 100%;
+    height: calc(100vh-64px);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.testroombox {
+    height: calc(100vh - 64px);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 10px;
+    //padding-bottom: 70px;
+
+    
+}
+
+.compose {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex: 0;
+    align-items: center;
+    background: white;
+    border-top: 1px solid #eeeef1;
+    bottom: 0px;
+  }
+  
+  @supports (backdrop-filter: blur(20px)) {
+    .compose {
+      border: none;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+    }
+  }
+  
+  .composeinput {
+    flex: 1;
+    border: none;
+    font-size: 14px;
+    height: 40px;
+    background: none;
+  }
+  
+  .composeinput::placeholder {
+    opacity: 0.3;
+  }
+  
+  .compose .toolbar-button {
+    color: #bbbbbf;
+    margin-left: 15px;
+  }
+  
+  .compose .toolbar-button:hover {
+    color: #99999c;
+  }
+
+  .messageContainer {
+    flex: 1;
+    position: relative;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }

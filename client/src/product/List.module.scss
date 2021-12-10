@@ -1,0 +1,28 @@
+.card {
+  height: 150px;
+  margin: 8px;
+}
+
+.link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.root{
+  width: 100%;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loading {
+  display: flex;
+  flex: 1;
+  margin-top: 240px;
+  align-items: center; 
+  justify-Content: center;
+}

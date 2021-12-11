@@ -1,0 +1,61 @@
+.img2 {
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+
+  &.active {
+    &.white {
+      outline: 5px solid white;
+    }
+
+    &.grey {
+      outline: 5px solid grey;
+    }
+  }
+}
+
+.img2Active {
+  @extend .img2;
+  outline: 5px solid white;
+}
+
+img2Active {
+  @extend .img2;
+  outline: 5px solid;
+}
+
+.imgContainer {
+  display: flex;
+  width: 100%;
+  margin: 10px;
+}
+
+.imgContainerEnd {
+  display: flex;
+  width: 100%;
+  margin: 10px;
+}
+
+.thumbnailWrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  overflow: hidden;
+}
+
+.root {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.marginBottom10 {
+  margin-bottom: 10px;
+}
+
+.marginLeft10 {
+  margin-right: 10px;
+}

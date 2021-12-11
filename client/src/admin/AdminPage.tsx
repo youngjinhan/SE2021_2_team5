@@ -1,6 +1,6 @@
 import { firestore, parseDocs } from "../util/firebase";
 import React, { useState, useEffect, useContext } from "react";
-import { RouteComponentProps } from "react-router";
+import { RouteComponentProps, Link } from "react-router-dom";
 import { UserContext } from "../auth/Auth";
 import styles from "./AdminPage.module.scss";
 import { UserData } from "../models";
@@ -8,7 +8,6 @@ import { DocData } from "../models/meta";
 import {
   CircularProgress,
   Grid,
-  Link,
   Table,
   TableBody,
   TableCell,
@@ -31,8 +30,7 @@ export const AdminPage: React.FC<Props> = (props: Props) => {
     }
     setWip(true);
     try {
-      const ref = firestore.collection("users").orderBy("type");
-
+      const ref = firestore.collection("users").orderBy("sid");
       const qs = await ref.get();
 
       setUsers(parseDocs(qs.docs));
@@ -77,7 +75,7 @@ export const AdminPage: React.FC<Props> = (props: Props) => {
         <TableHead>
           <TableRow>
             <TableCell>
-              <Typography align={"left"}>email</Typography>
+              <Typography align={"left"}>학번</Typography>
             </TableCell>
 
             <TableCell>
@@ -85,7 +83,15 @@ export const AdminPage: React.FC<Props> = (props: Props) => {
             </TableCell>
 
             <TableCell>
-              <Typography align={"left"}>type</Typography>
+              <Typography align={"left"}>학과</Typography>
+            </TableCell>
+
+            <TableCell>
+              <Typography align={"left"}>이수현황</Typography>
+            </TableCell>
+
+            <TableCell>
+              <Typography align={"left"}>수정</Typography>
             </TableCell>
 
             {/* <TableCell>
@@ -110,10 +116,14 @@ const UserCell: React.FC<Props1> = (props: Props1) => {
   let status = "";
   const user = props.user;
   return (
+
     <TableRow>
-      <TableCell align="left">{user.data.email}</TableCell>
+      <TableCell align="left">{user.data.sid}</TableCell>
       <TableCell align="left">{user.data.name}</TableCell>
-      <TableCell align="left">{user.data.type}</TableCell>
+      <TableCell align="left">{user.data.major}</TableCell>
+      <TableCell align="left">{`${user.data.completedClasses.length}/${user.data.classes.length}`}</TableCell>
+      <TableCell align="left"><Link to="/">ㅁㄴㅇㄹ</Link></TableCell>
+      
     </TableRow>
   );
 };

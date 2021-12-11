@@ -6,14 +6,29 @@ export interface UserData {
     type: UserType;
     name: string;
     email: string;
+    sid: string;
+    major: string;
+    vrcID: string;
+    classes: Array<string>;
+    completedClasses: Array<string>
+
     createdAt: firebase.firestore.Timestamp;
     lastModified: firebase.firestore.Timestamp;
+
     // photoUrl?: string;
     // clubs: string[];
     // pushTokens?: { [pushToken: string]: true };
     // major?: string;
     // studentNo?: string;
   }
+
+export interface WorldData{
+  name: string;
+  worldUrl: string;
+  duration: string;
+  description: string;
+  dueDate: any;
+}
 
 export interface BidData {
   createdAt: any;

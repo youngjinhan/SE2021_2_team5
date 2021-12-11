@@ -10,17 +10,17 @@ export interface Props {
       const t = props.time.getTime();
       const v = now - t;
     
-      if (v < 60 * 1000) {
-        return <span>방금 전</span>;
-      }
+      // if (v < 60 * 1000) {
+      //   return <span>방금 전</span>;
+      // }
     
-      if (v < 60 * 60 * 1000) {
-        return <span>{Math.round(v / (60 * 1000))}분 전</span>;
-      }
+      // if (v < 60 * 60 * 1000) {
+      //   return <span>{Math.round(v / (60 * 1000))}분 전</span>;
+      // }
     
-      if (v < 60 * 60 * 24 * 1000) {
-        return <span>{Math.round(v / (60 * 60 * 1000))}시간 전</span>;
-      }
+      // if (v < 60 * 60 * 24 * 1000) {
+      //   return <span>{Math.round(v / (60 * 60 * 1000))}시간 전</span>;
+      // }
     
       return (
         <span>

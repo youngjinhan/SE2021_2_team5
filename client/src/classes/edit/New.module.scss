@@ -1,0 +1,36 @@
+.root{
+  width: 100%;
+}
+
+.marginBottom10{
+  margin-bottom: 10px;
+}
+
+.sellType {
+  display: flex;
+  flex-direction: row !important;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+    padding: 5px;
+}
+  
+  /* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.loading {
+  display: flex;
+  flex: 1;
+  margin-top: 240px;
+  align-items: center; 
+  justify-Content: center;
+}

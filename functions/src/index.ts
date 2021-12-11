@@ -14,7 +14,7 @@ app.use(bodyParser());
 app.use(cors({ maxAge: 60 * 60 * 24 * 7 }));
 app.use(express.json());
 
-app.get('/history/:roomid/:vrcid', user.setHistory);
+app.get('/history/:key/:sid', user.setHistory);
 
 export const helloWorld = functions.https.onRequest((request, response) => {
  response.send("Hello from Firebase!");

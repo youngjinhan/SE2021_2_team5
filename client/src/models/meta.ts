@@ -1,4 +1,4 @@
-import * as firebase from "firebase";
+//import * as firebase from "firebase";
 import { Entity } from "shared/Entity";
 
 export interface DocData<T extends Entity> {

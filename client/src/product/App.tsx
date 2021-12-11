@@ -15,7 +15,7 @@ export interface Props extends RouteComponentProps {}
 const App: React.FC<Props> = (props: Props) => {
   return (
     <Switch>
-      <Route path={`${props.match.path}`} exact component={ProductListPage} />
+      <VerifiedRoute path={`${props.match.path}`} exact component={ProductListPage} />
 
       <VerifiedRoute
         path={`${props.match.path}/new`}

@@ -157,10 +157,10 @@ export const Header: React.FC = () => {
       {!user && signin}
       <Divider />
       <List>
-        <ListItem button component="a" href="/product" key="products">
-          <ListItemText primary={"products"} />
+        <ListItem button component="a" href="/classes" key="classes">
+          <ListItemText primary={"classess"} />
         </ListItem>
-        <ListItem button component="a" href="/search" key="search">
+        {/* <ListItem button component="a" href="/search" key="search">
           <ListItemText primary={"search"} />
         </ListItem>
         <ListItem button component="a" href="/wishlist" key="wish list">
@@ -168,13 +168,13 @@ export const Header: React.FC = () => {
         </ListItem>
         <ListItem button component="a" href="/shoppinglist" key="history">
           <ListItemText primary={"shopping list"} />
-        </ListItem>
+        </ListItem> */}
         {user?.type == "admin" && (
           <ListItem button component="a" href="/admin" key="admin">
             <ListItemText primary={"admin"} />
           </ListItem>
         )}
-        {(user?.type == "admin" || user?.type == "student") && (
+        {/* {(user?.type == "admin" || user?.type == "student") && (
           <ListItem
             button
             component="a"
@@ -183,7 +183,7 @@ export const Header: React.FC = () => {
           >
             <ListItemText primary={"my products"} />
           </ListItem>
-        )}
+        )} */}
         {user && (
           <ListItem
             button

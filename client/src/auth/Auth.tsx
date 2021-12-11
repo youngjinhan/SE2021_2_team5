@@ -13,6 +13,9 @@ export interface User {
   readonly type: UserType;
   readonly name: string;
   readonly email: string;
+  readonly sid: string;
+  readonly major: string;
+  readonly vrcID: string;
 }
 
 interface Props {
@@ -59,7 +62,10 @@ export const Authenticated: React.FC<Props> = (props: Props) => {
           },
           type: data.type,
           name: data.name,
-          email: data.email
+          email: data.email,
+          sid: data.sid,
+          major: data.major,
+          vrcID: data.vrcID
         });
         setLoaded(true);
       });

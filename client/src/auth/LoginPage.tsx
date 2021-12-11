@@ -29,11 +29,10 @@ import Card from "@material-ui/core/Card";
 import { RedirectDialog } from "../auth/Guards";
 import { DialogInfo } from "../models";
 import { firebase, firestore } from "../util/firebase";
-import {UserData, UserType} from "../models/index"
+import { UserData, UserType } from "../models/index";
 
 const theme = createMuiTheme({
-  palette: {
-  },
+  palette: {},
 });
 
 const useStyles = makeStyles((theme) => ({
@@ -72,6 +71,9 @@ interface Fields {
   password1: string;
   password2: string;
   name: string;
+  sid: string;
+  major: string;
+  vrcID: string;
 }
 
 export const LoginPage: React.FC<Props> = (props: Props) => {
@@ -83,6 +85,9 @@ export const LoginPage: React.FC<Props> = (props: Props) => {
     password1: "",
     password2: "",
     name: "",
+    sid: "",
+    major: "",
+    vrcID: ""
   });
   const [userType, setUserType] = useState<UserType>("student");
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
@@ -119,10 +124,10 @@ export const LoginPage: React.FC<Props> = (props: Props) => {
       } else if (formState.values.password1 !== formState.values.password2) {
         alert("비밀번호가 일치하지 않습니다.");
         return;
-      } else if (!formState.values.name){
+      } else if (!formState.values.name) {
         alert("사용자 이름이 입력되지 않았습니다.");
         return;
-      } else if (!userType){
+      } else if (!userType) {
         alert("사용자 타입이 선택되지 않았습니다.");
         return;
       }
@@ -152,8 +157,13 @@ export const LoginPage: React.FC<Props> = (props: Props) => {
           type: userType,
           email: formState.values.email,
           name: formState.values.name,
+          sid: formState.values.sid,
+          major: formState.values.major,
+          vrcID: formState.values.vrcID,
           createdAt: firebase.firestore.FieldValue.serverTimestamp() as any,
-          lastModified: firebase.firestore.FieldValue.serverTimestamp() as any
+          lastModified: firebase.firestore.FieldValue.serverTimestamp() as any,
+          classes: [],
+          completedClasses: []
         };
         await doc.set(data);
 
@@ -296,9 +306,37 @@ export const LoginPage: React.FC<Props> = (props: Props) => {
                   variant="filled"
                 />
               )}
-              {register && 
-              <div className={styles.margintop16}></div>
-              }
+              {register && (
+                <TextField
+                  {...text("sid")}
+                  required
+                  fullWidth
+                  label="학번"
+                  margin="normal"
+                  variant="filled"
+                />
+              )}
+                            {register && (
+                <TextField
+                  {...text("major")}
+                  required
+                  fullWidth
+                  label="전공"
+                  margin="normal"
+                  variant="filled"
+                />
+              )}
+                                          {register && (
+                <TextField
+                  {...text("vrcID")}
+                  required
+                  fullWidth
+                  label="VRChat ID"
+                  margin="normal"
+                  variant="filled"
+                />
+              )}
+              {register && <div className={styles.margintop16}></div>}
               {register && (
                 <Select
                   label="User Type"
@@ -310,12 +348,12 @@ export const LoginPage: React.FC<Props> = (props: Props) => {
                   onChange={handleChange}
                   displayEmpty
                 >
-                  <MenuItem value="" disabled>
+                  <MenuItem value=""disabled>
                     Select user type
                   </MenuItem>
-                  <MenuItem value={"admin"}>Admin</MenuItem>
-                  <MenuItem value={"seller"}>Seller</MenuItem>
-                  <MenuItem value={"buyer"}>Buyer</MenuItem>
+                  <MenuItem value={"student"}>Student</MenuItem>
+                  <MenuItem value={"professor"}>professor</MenuItem>
+                  <MenuItem value={"adminr"}>admin</MenuItem>
                 </Select>
               )}
             </div>
@@ -361,7 +399,9 @@ export const LoginPage: React.FC<Props> = (props: Props) => {
               </Grid>
             </Grid>
             <Divider variant="middle" />
-            <Box m={4}><div className={styles.center}>2020-2 Web Project</div></Box>
+            <Box m={4}>
+              <div className={styles.center}>2021-2 Software Engineering</div>
+            </Box>
           </div>
         </form>
       </ThemeProvider>

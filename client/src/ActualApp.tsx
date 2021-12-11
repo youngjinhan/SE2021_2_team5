@@ -12,6 +12,7 @@ import ProductApp from "./product/App";
 import WishlistApp from "./lists/App";
 import {SellerList} from "./lists/SellerList";
 import {ShoppingList} from "./lists/ShoppingList";
+import ClassesAPP from "./classes/App"
 
 
 const Main = React.memo(() => {
@@ -25,7 +26,7 @@ const Main = React.memo(() => {
         {/* <Route path="/chatting" component={ChattingApp} /> */}
 
         <Route path="/product" component={ProductApp} />
-
+        <VerifiedRoute path="/classes" component={ClassesAPP}/>
         <VerifiedRoute path="/wishlist" component={WishlistApp}/>
         <Route path="/sellerlist/:sellerUid" component={SellerList}/>
         <VerifiedRoute path="/shoppinglist" component={ShoppingList}/>

@@ -8,23 +8,36 @@ export async function setHistory(
   res: express.Response
 ): Promise<void> {
   console.log(req.params);
-  const uid: string = req.params.sid;
+  const sid: string = req.params.sid;
   const key: string = req.params.key;
-  await admin
-    .firestore()
-    .collection("users")
-    .doc(uid)
-    .collection("history")
-    .add({
-      timestamp: new Date(),
-      lecture: req.params.roomid,
-    })
-    .then((docRef) => {
-      console.log(uid, docRef.id);
-    });
+
+    const userColRef = await admin.firestore().collection("users")
+    const userDocs = await userColRef.where('sid', "==", sid).limit(1).get();
+    // if(!userDocs.docs.length){
+    //   //no user found
+    // }
+    console.log(userDocs);
+
+    const worldColRef = await admin.firestore().collection("worlds")
+    const worldStartDoc = await worldColRef.where('startKey', "==", key).limit(1).get()
+    const worldEndDoc = await worldColRef.where('endKey', "==", key).limit(1).get()
+
+    console.log(worldStartDoc);
+    console.log(worldEndDoc);
+
+    // if(worldStartDoc.docs.length){
+
+    // }
+    // else if(worldEndDoc.docs.length){
+
+    // }
 
   console.log(JSON.stringify(req.headers));
-  res.redirect("https://www.youtube.com/watch?v=p_LJR19ZSkY&ab_channel=%EC%86%8D%EC%82%AD%EC%9D%B4%EB%8A%94%EB%AA%BD%EC%9E%90");
+  key === "1234"
+? res.redirect("https://youtu.be/TAqukZduvv0")
+    : key === "5678"
+    ? res.redirect("https://youtu.be/H9G__051vKw")
+    : res.redirect("https://youtu.be/TItMRFSgIL4");
 }
 
 // history/123123/J1K1zjnvcpWQXTkUIW21tlBd5mt1

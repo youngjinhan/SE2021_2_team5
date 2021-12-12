@@ -89,11 +89,6 @@ export const AdminPage: React.FC<Props> = (props: Props) => {
             <TableCell>
               <Typography align={"left"}>이수현황</Typography>
             </TableCell>
-
-            <TableCell>
-              <Typography align={"left"}>수정</Typography>
-            </TableCell>
-
             {/* <TableCell>
               <Typography align={"left"}>status</Typography>
             </TableCell> */}
@@ -122,7 +117,6 @@ const UserCell: React.FC<Props1> = (props: Props1) => {
       <TableCell align="left">{user.data.name}</TableCell>
       <TableCell align="left">{user.data.major}</TableCell>
       <TableCell align="left">{`${user.data.completedClasses.length}/${user.data.classes.length}`}</TableCell>
-      <TableCell align="left"><Link to="/">ㅁㄴㅇㄹ</Link></TableCell>
       
     </TableRow>
   );

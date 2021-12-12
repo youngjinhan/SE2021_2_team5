@@ -32,8 +32,11 @@ export const ClassListPage: React.FC<Props> = (props: Props) => {
   const [worlds, setWorlds] = useState<String[]>();
   const [completedWorlds, setCompletedWorlds] = useState<String[]>();
 
+ 
+
   async function load() {
     setWip(true);
+
     if (!user && !loaded) {
       return;
     }

@@ -162,10 +162,11 @@ export const LoginPage: React.FC<Props> = (props: Props) => {
           vrcID: formState.values.vrcID,
           createdAt: firebase.firestore.FieldValue.serverTimestamp() as any,
           lastModified: firebase.firestore.FieldValue.serverTimestamp() as any,
-          classes: [],
+          classes: ['HcOcDKi7XBfWKZL4d60s', 'PgMoY6U3P2rC6IuVAHfP'],
           completedClasses: []
         };
         await doc.set(data);
+        console.log(data)
 
         await cred.user!.sendEmailVerification();
       } catch (e: any) {
@@ -353,7 +354,7 @@ export const LoginPage: React.FC<Props> = (props: Props) => {
                   </MenuItem>
                   <MenuItem value={"student"}>Student</MenuItem>
                   <MenuItem value={"professor"}>professor</MenuItem>
-                  <MenuItem value={"adminr"}>admin</MenuItem>
+                  <MenuItem value={"admin"}>admin</MenuItem>
                 </Select>
               )}
             </div>
